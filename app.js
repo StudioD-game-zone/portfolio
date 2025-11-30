@@ -87,9 +87,8 @@ function initNavigation() {
     updateActiveNav();
     window.addEventListener('load', updateActiveNav);
 }
-
 // ============================================
-// Scroll Animations
+// Scroll Animations (NEW REFACTORED VERSION)
 // ============================================
 function initScrollAnimations() {
     const observerOptions = {
@@ -106,6 +105,17 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
+    // 1. We just find ALL elements with our new base class
+    const elements = document.querySelectorAll('.scroll-reveal');
+    
+    // 2. We observe each one. That's it!
+    elements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // NOTE: We've removed the 'section' reveal logic 
+    // because this new system is more precise and handles it better.
+}
     // Observe fade-in elements
     const fadeElements = document.querySelectorAll('.fade-in, .resume-block, .portfolio-item, .about-content');
     fadeElements.forEach(el => {
@@ -132,7 +142,7 @@ function initScrollAnimations() {
         
         sectionObserver.observe(section);
     });
-}
+
 
 // ============================================
 // Skill Bars Animation

@@ -1003,3 +1003,46 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ============================================ */
+/* NEW SCROLL ANIMATION SYSTEM                  */
+/* ============================================ */
+
+/* This is the base class. 
+  It makes the element invisible and sets up the transition.
+  It does NOT define a transform, so it won't move.
+*/
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform; /* Performance hint for the browser */
+}
+
+/* This is the class our JavaScript will add when the
+  element is on-screen. It fades in and resets the transform.
+*/
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Animation Variations --- */
+/* We add these classes IN ADDITION to .scroll-reveal 
+  to define the *starting* position.
+*/
+
+.scroll-reveal.fade-up {
+    transform: translateY(30px);
+}
+
+.scroll-reveal.fade-left {
+    transform: translateX(50px);
+}
+
+.scroll-reveal.fade-right {
+    transform: translateX(-50px);
+}
+
+.scroll-reveal.zoom-in {
+    transform: scale(0.9);
+}
