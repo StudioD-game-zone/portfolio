@@ -351,7 +351,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: var(--radius-lg);
-    filter: brightness(0.3) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
