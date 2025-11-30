@@ -117,6 +117,10 @@ body {
     align-items: center;
 }
 
+.nav-action a{
+    text-decoration: none;
+}
+
 .btn-join {
     display: flex;
     align-items: center;
